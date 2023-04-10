@@ -1,4 +1,4 @@
 export interface Resizeable{
-    resize():number
+    resize(percent:number)
     getArea():number
 }

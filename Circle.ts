@@ -17,8 +17,8 @@ export class Circle implements Resizeable{
        return this._radius*this._radius*Math.PI
     }
 
-    resize(): number {
-        return  Math.random()*this.getArea()
+    resize(percent:number) {
+        this._radius+=percent/100*this._radius
     }
 
 }

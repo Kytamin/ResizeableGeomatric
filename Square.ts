@@ -5,12 +5,12 @@ export class Square extends Rectangle implements Resizeable{
         super(size, size);
     }
     getArena(): number {
-        return this.getWidth()
+        return this.getWidth()*this.getWidth()
 
     }
 
-    resize(): number {
-        return Math.random()*this.getArena()
+    resize(percent:number) {
+          this._width+=this.getWidth()*percent/100
+          this._length+=this.getLength()*percent/100
     }
-
 }

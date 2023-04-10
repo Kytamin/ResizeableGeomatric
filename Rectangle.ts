@@ -2,8 +2,8 @@ import {Resizeable} from "./Resizeable";
 
 
 export class  Rectangle implements Resizeable{
-    private _width:number
-    private _length:number
+    protected _width:number
+    protected _length:number
 
     constructor(width: number, length: number) {
         this._width = width;
@@ -28,11 +28,12 @@ export class  Rectangle implements Resizeable{
     }
 
     getArea(): number {
-        return this._width&this._length
+        return this._width*this._length
     }
 
-    resize(): number {
-        return  Math.random()*this.getArea()
+    resize(percent:number):void {
+         this._width+= this._width*percent/100
+         this._length+=this._length*percent/100
     }
 
 }
